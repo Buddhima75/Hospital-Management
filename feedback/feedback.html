@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>
+        Feedback
+    </title>
+    <link rel="stylesheet" href="feedback.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script>
+      window.onload = function() {
+          const urlParams = new URLSearchParams(window.location.search);
+          const alertMessage = urlParams.get('alert');
+          if (alertMessage) {
+              alert(alertMessage);
+          }
+      }
+    </script> 
+      
+  </head>
+        
+  <body>
+    
+
+    <div class="container">  
+        
+      <form id="contact" action="../feedback/feedback.php" method="POST">
+        <h3>BBC Hospital Feedback</h3>
+        <h4>Contact us</h4>
+        <input placeholder="Your name" type="text" tabindex="1" id="name" name="name" required autofocus>
+        <input placeholder="Your Email Address" type="email" tabindex="2" id="email" name="email" required>
+        <input placeholder="Your Phone Number EX:1234567890 " pattern="[1-9]{1}[0-9]{9}"   maxlength="10" id="number"  name="number" type="number" tabindex="3" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
+        
+        </br><input type="submit" class="btn btn-primary  btn-sm" name="submit" value="Submit" required>
+        <a href="../index.php"><input type="button" class="btn btn-primary  btn-sm" name="submit" value="Back"></a>
+
+        
+      </form>
+    </div>
+
+  </body>
+</html>
+
+
